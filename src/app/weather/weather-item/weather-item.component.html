@@ -1,0 +1,12 @@
+
+<article class="weather-element">
+    <div class="col-1">
+        <h3>{{ item.city }} <span *ngIf="item.countryCode">{{item.countryCode}}</span></h3>
+        <p class="info">{{ item.description | uppercase }}</p>
+    </div>
+    <div class="col-2">
+      <!-- <h3>  <span *ngIf="item.temperature">{{item.temperature}}°C</span></h3> -->
+        <span class="temperature" appTemperature [temperatureCelsius]="item.temperature">{{ item.temperature }}°C</span>
+    </div>
+    <span class="delete" (click)="onDeleteItem($event, item)">[x]</span>
+</article>
